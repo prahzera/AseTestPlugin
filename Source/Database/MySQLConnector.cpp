@@ -1,7 +1,7 @@
 
 #include "Database/MySQLConnector.h"
 
-MySQLConnector::MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port, int ssl_mode, const std::string& tls_version) : _host(host), _user(user), _password(password), _dbname(dbname), _port(port, _ssl_mode(ssl_mode), _tls_version(tls_version))
+MySQLConnector::MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port, int ssl_mode, const std::string& tls_version) : _host(host), _user(user), _password(password), _dbname(dbname), _port(port), _ssl_mode(ssl_mode), _tls_version(tls_version)
 {
     if (!MySQLConnect()) return;
 }

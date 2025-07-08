@@ -22,9 +22,6 @@
     <Filter Include="Header Files\Public\Database">
       <UniqueIdentifier>{9893004b-393d-4e25-b442-71c3aa17c3ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Database">
-      <UniqueIdentifier>{8157e5bd-645f-4571-a0da-3018cc8e4e76}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Configs\config.json">
@@ -85,12 +82,6 @@
     </ClCompile>
     <ClCompile Include="Source\Public\Database\sqlite3\sqlite3.c">
       <Filter>Header Files\Public\Database</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Database\MySQLConnector.cpp">
-      <Filter>Source Files\Database</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Database\SQLiteConnector.cpp">
-      <Filter>Source Files\Database</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

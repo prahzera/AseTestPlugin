@@ -4,7 +4,7 @@
 #pragma once
 
 #include "MySQLConnector.h"
-#include "SQLiteConnector.h"
+//#include "SQLiteConnector.h"
 #include <json.hpp>
 #include <memory>
 
@@ -30,11 +30,11 @@ public:
 		}
 		else
 		{
-			std::string default_path = ArkApi::Tools::GetCurrentDir() + "/ArkApi/Plugins/" + PROJECT_NAME + "/" + PROJECT_NAME + ".db";
+			/*std::string default_path = ArkApi::Tools::GetCurrentDir() + "/ArkApi/Plugins/" + PROJECT_NAME + "/" + PROJECT_NAME + ".db";
 			std::string sqlitePath = config.value("SQLiteDatabasePath","");
 			std::string db_path = (sqlitePath.empty()) ? default_path : sqlitePath;
 
-			return std::make_unique<SQLiteConnector>(db_path);
+			return std::make_unique<SQLiteConnector>(db_path);*/
 		}
 	}
 };

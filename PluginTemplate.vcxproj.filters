@@ -63,10 +63,22 @@
     <ClInclude Include="Source\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Public\Database\DatabaseFactory.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Database\IDatabaseConnector.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Database\MySQLConnector.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\PluginTemplate.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Database\MySQLConnector.cpp">
+      <Filter>Source Files\Database</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

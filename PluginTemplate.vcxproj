@@ -28,6 +28,9 @@
   <ItemGroup>
     <ClInclude Include="Source\Commands.h" />
     <ClInclude Include="Source\Hooks.h" />
+    <ClInclude Include="Source\Public\Database\DatabaseFactory.h" />
+    <ClInclude Include="Source\Public\Database\IDatabaseConnector.h" />
+    <ClInclude Include="Source\Public\Database\MySQLConnector.h" />
     <ClInclude Include="Source\Public\PluginTemplate.h" />
     <ClInclude Include="Source\Reload.h" />
     <ClInclude Include="Source\RepairItems.h" />
@@ -35,6 +38,7 @@
     <ClInclude Include="Source\Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Database\MySQLConnector.cpp" />
     <ClCompile Include="Source\PluginTemplate.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

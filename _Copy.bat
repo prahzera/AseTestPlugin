@@ -18,8 +18,8 @@ xcopy "%SOURCE_DIR%Source" "%DEST_DIR%Source" /s /i /e
 
 :: Copy files
 copy "%SOURCE_DIR%.gitignore" "%DEST_DIR%.gitignore"
-copy "%SOURCE_DIR%AsaApi.Plugins.Template.vcxproj" "%DEST_DIR%AsaApi.Plugins.Template.vcxproj"
-copy "%SOURCE_DIR%AsaApi.Plugins.Template.vcxproj.filters" "%DEST_DIR%AsaApi.Plugins.Template.vcxproj.filters"
+copy "%SOURCE_DIR%AseApi.Plugins.Template.vcxproj" "%DEST_DIR%AseApi.Plugins.Template.vcxproj"
+copy "%SOURCE_DIR%AseApi.Plugins.Template.vcxproj.filters" "%DEST_DIR%AseApi.Plugins.Template.vcxproj.filters"
 copy "%SOURCE_DIR%PluginTemplate.sln" "%DEST_DIR%PluginTemplate.sln"
 copy "%SOURCE_DIR%vcpkg.json" "%DEST_DIR%vcpkg.json"
 copy "%SOURCE_DIR%vcpkg-configuration.json" "%DEST_DIR%vcpkg-configuration.json"

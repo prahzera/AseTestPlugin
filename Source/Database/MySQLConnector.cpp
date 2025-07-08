@@ -1,10 +1,7 @@
 
 #include "Database/MySQLConnector.h"
 
-//, int ssl_mode, const std::string& tls_version
-//, _ssl_mode(ssl_mode), _tls_version(tls_version)
-
-MySQLConnector::MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port) : _host(host), _user(user), _password(password), _dbname(dbname), _port(port)
+MySQLConnector::MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port, int ssl_mode, const std::string& tls_version) : _host(host), _user(user), _password(password), _dbname(dbname), _port(port, _ssl_mode(ssl_mode), _tls_version(tls_version))
 {
     if (!MySQLConnect()) return;
 }
@@ -173,18 +170,18 @@ std::string MySQLConnector::escapeString(const std::string& value)
     return escapeStr;
 }
 
-//void MySQLConnector::configureSSL(int ssl_mode, const std::string& tls_version)
-//{
-//    if (ssl_mode >= 0 && ssl_mode <= 4)
-//    {
-//        mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode);
-//    }
-//
-//    if (!tls_version.empty())
-//    {
-//        mysql_options(conn, MYSQL_OPT_TLS_VERSION, tls_version.c_str());
-//    }
-//}
+void MySQLConnector::configureSSL(int ssl_mode, const std::string& tls_version)
+{
+    if (ssl_mode >= 0 && ssl_mode <= 4)
+    {
+        mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode);
+    }
+
+    if (!tls_version.empty())
+    {
+        mysql_options(conn, MYSQL_OPT_TLS_VERSION, tls_version.c_str());
+    }
+}
 
 void MySQLConnector::printError(const std::string& message)
 {
@@ -223,7 +220,7 @@ bool MySQLConnector::MySQLConnect()
         return false;
     }
 
-    //configureSSL(_ssl_mode, _tls_version);
+    configureSSL(_ssl_mode, _tls_version);
 
     if (!mysql_real_connect(conn, _host.c_str(), _user.c_str(), _password.c_str(), _dbname.c_str(), _port, nullptr, 0))
     {

@@ -27,7 +27,7 @@ void OnServerReady()
 
 	// add function here
 	//AddReloadCommands();
-	SetTimers();
+	//SetTimers();
 	//SetHooks();
 }
 
@@ -55,7 +55,7 @@ extern "C" __declspec(dllexport) void Plugin_Unload()
 
 	// Do cleanup here
 	//AddReloadCommands(false);
-	SetTimers(false);
+	//SetTimers(false);
 	//SetHooks(false);
 }
 

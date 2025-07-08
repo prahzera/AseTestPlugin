@@ -1,0 +1,1 @@
+# AseApi.Plugin.Template

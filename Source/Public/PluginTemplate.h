@@ -1,14 +1,14 @@
 #pragma once
 
-//#include "json.hpp"
+#include "json.hpp"
 
-//#include "Database/DatabaseFactory.h"
+#include "Database/DatabaseFactory.h"
 
-//#include "Requests.h"
+#include "Requests.h"
 
 namespace PluginTemplate
 {
-	/*inline nlohmann::json config;
+	inline nlohmann::json config;
 	inline bool isDebug{ false };
 
 	inline int counter = 0;
@@ -21,6 +21,6 @@ namespace PluginTemplate
 
 	static API::Requests& req = API::Requests::Get();
 
-	inline std::string lastMessageID;*/
+	inline std::string lastMessageID;
 
 }

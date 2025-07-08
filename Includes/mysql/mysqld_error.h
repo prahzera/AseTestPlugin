@@ -26,9 +26,9 @@
 #define MYSQLD_ERROR_INCLUDED
 
 static const int errmsg_section_start[] = { 1000, 3000, 3500, 6000, 10000, 15000 };
-static const int errmsg_section_size[] = { 888, 239, 667, 141, 4078, 147 };
+static const int errmsg_section_size[] = { 888, 239, 667, 141, 4083, 147 };
 
-static const int total_error_count = 6160;
+static const int total_error_count = 6165;
 
 //#define OBSOLETE_ER_HASHCHK 1000
 //#define OBSOLETE_ER_NISAMCHK 1001
@@ -3873,7 +3873,7 @@ static const int total_error_count = 6160;
 #define ER_IB_MSG_80 11905
 #define ER_IB_MSG_81 11906
 #define ER_IB_MSG_82 11907
-#define ER_IB_MSG_83 11908
+#define ER_IB_ERR_PAGE_DIRTY_AT_SHUTDOWN 11908
 #define ER_IB_MSG_84 11909
 #define ER_IB_MSG_85 11910
 #define ER_IB_MSG_86 11911
@@ -6043,6 +6043,11 @@ static const int total_error_count = 6160;
 //#define OBSOLETE_ER_IB_MSG_FIL_STATE_MOVED_PREV_OR_HAS_DATADIR 14075
 //#define OBSOLETE_ER_RPL_KILL_OLD_DUMP_THREAD_ENCOUNTERED 14076
 //#define OBSOLETE_ER_RPL_MTA_ALLOW_COMMIT_OUT_OF_ORDER 14077
+#define ER_CHECK_TABLE_FUNCTIONS 14078
+#define ER_CHECK_TABLE_FUNCTIONS_DETAIL 14079
+#define ER_GRP_RPL_CERT_BROADCAST_THREAD_CREATE_FAILED 14080
+#define ER_GRP_RPL_CERT_BROADCAST_THREAD_STARTED 14081
+#define ER_GRP_RPL_CERT_BROADCAST_THREAD_STOPPED 14082
 #define ER_LANGUAGE_COMPONENT_INFO 15000
 #define ER_LANGUAGE_COMPONENT_WARNING 15001
 #define ER_LANGUAGE_COMPONENT_ERROR 15002
@@ -6196,6 +6201,6 @@ static const int pfs_no_error_stat_count = 2;
 
 static const int pfs_session_error_stat_count = 1774;
 
-static const int pfs_global_error_stat_count = 3763;
+static const int pfs_global_error_stat_count = 3768;
 
 #endif

@@ -4,20 +4,20 @@
 
 #include "PluginTemplate.h"
 
-#include "Utils.h"
+//#include "Utils.h"
 
 // all other headers goes here
-#include "RepairItems.h"
+//#include "RepairItems.h"
 
 //end of other headers
 
-#include "Hooks.h"
+//#include "Hooks.h"
 
-#include "Timers.h"
+//#include "Timers.h"
 
-#include "Commands.h"
+//#include "Commands.h"
 
-#include "Reload.h"
+//#include "Reload.h"
 
 #pragma comment(lib, "ArkApi.lib")
 
@@ -26,9 +26,9 @@ void OnServerReady()
 	Log::GetLog()->info("PluginTemplate Initialized");
 
 	// add function here
-	AddReloadCommands();
-	SetTimers();
-	SetHooks();
+	//AddReloadCommands();
+	//SetTimers();
+	//SetHooks();
 }
 
 DECLARE_HOOK(AShooterGameMode_BeginPlay, void, AShooterGameMode*);
@@ -54,8 +54,8 @@ extern "C" __declspec(dllexport) void Plugin_Unload()
 	ArkApi::GetHooks().DisableHook("AShooterGameMode.BeginPlay", &Hook_AShooterGameMode_BeginPlay);
 
 	// Do cleanup here
-	AddReloadCommands(false);
-	SetTimers(false);
-	SetHooks(false);
+	//AddReloadCommands(false);
+	//SetTimers(false);
+	//SetHooks(false);
 }
 

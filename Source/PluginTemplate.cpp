@@ -4,7 +4,7 @@
 
 #include "PluginTemplate.h"
 
-//#include "Utils.h"
+#include "Utils.h"
 
 // all other headers goes here
 //#include "RepairItems.h"

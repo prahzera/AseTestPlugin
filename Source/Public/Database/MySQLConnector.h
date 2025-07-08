@@ -199,6 +199,12 @@ private:
 		{
 			mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode);
 		}
+		else
+		{
+            // Replace the problematic line with the following:
+            int ssl_mode_disabled = SSL_MODE_DISABLED;
+            mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode_disabled);
+		}
 
 		if (!tls_version.empty())
 		{

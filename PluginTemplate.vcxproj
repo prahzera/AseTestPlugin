@@ -28,7 +28,6 @@
   <ItemGroup>
     <ClInclude Include="Source\Commands.h" />
     <ClInclude Include="Source\Hooks.h" />
-    <ClInclude Include="Source\Public\Database\sqlite3\sqlite3.h" />
     <ClInclude Include="Source\Public\PluginTemplate.h" />
     <ClInclude Include="Source\Reload.h" />
     <ClInclude Include="Source\RepairItems.h" />
@@ -37,7 +36,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\PluginTemplate.cpp" />
-    <ClCompile Include="Source\Public\Database\sqlite3\sqlite3.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

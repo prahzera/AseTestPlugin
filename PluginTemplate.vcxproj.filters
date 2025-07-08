@@ -60,19 +60,10 @@
     <ClInclude Include="Source\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Public\Database\sqlite3\sqlite3.h">
-      <Filter>Header Files\Public\Database</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Public\Database\IDatabaseConnector.h">
-      <Filter>Header Files\Public\Database</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Public\Database\DatabaseFactory.h">
       <Filter>Header Files\Public\Database</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Public\Database\MySQLConnector.h">
-      <Filter>Header Files\Public\Database</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Public\Database\SQLiteConnector.h">
+    <ClInclude Include="Source\Public\Database\sqlite3\sqlite3.h">
       <Filter>Header Files\Public\Database</Filter>
     </ClInclude>
   </ItemGroup>

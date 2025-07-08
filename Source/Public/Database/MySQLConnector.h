@@ -7,6 +7,7 @@
 #include <mysql/mysql.h>
 
 #pragma comment(lib,"mysqlclient.lib")
+#pragma comment(lib,"libmysql.lib")
 
 class MySQLConnector : public IDatabaseConnector
 {

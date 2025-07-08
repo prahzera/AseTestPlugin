@@ -421,11 +421,11 @@ void ReadConfig()
 		}
 		file >> PluginTemplate::config;
 
-		Log::GetLog()->info("{} config file loaded.", PROJECT_NAME);
+		/*Log::GetLog()->info("{} config file loaded.", PROJECT_NAME);
 
 		PluginTemplate::isDebug = PluginTemplate::config["Debug"]["PluginTemplate"].get<bool>();
 
-		Log::GetLog()->warn("Debug {}", PluginTemplate::isDebug);
+		Log::GetLog()->warn("Debug {}", PluginTemplate::isDebug);*/
 
 	}
 	catch(const std::exception& error)

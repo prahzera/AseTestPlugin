@@ -26,6 +26,7 @@ void OnServerReady()
 	Log::GetLog()->info("PluginTemplate Initialized");
 
 	// add function here
+	LoadDatabase();
 	AddReloadCommands();
 	SetTimers();
 	SetHooks();

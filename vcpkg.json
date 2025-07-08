@@ -1,0 +1,8 @@
+{
+  "name": "ase-api-plugin-template",
+  "version": "1.0.0",
+  "dependencies": [
+    "fmt"
+  ],
+  "builtin-baseline": "bffcbb75f71553824aa948a7e7b4f798662a6fa7"
+}

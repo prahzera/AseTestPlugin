@@ -1,0 +1,8 @@
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/fmt.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/package.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/package_source.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/edit_cache.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/rebuild_cache.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/list_install_components.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/install.dir
+C:/Users/ohmco/Desktop/ARKSE_WORKSPACE/AseApi.Plugin.Template/vcpkg_installed/x64-windows-static-md/vcpkg/blds/fmt/x64-windows-static-md-rel/CMakeFiles/install/local.dir

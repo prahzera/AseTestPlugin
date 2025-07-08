@@ -26,9 +26,9 @@ void OnServerReady()
 	Log::GetLog()->info("PluginTemplate Initialized");
 
 	// add function here
-	AddReloadCommands();
+	//AddReloadCommands();
 	SetTimers();
-	SetHooks();
+	//SetHooks();
 }
 
 DECLARE_HOOK(AShooterGameMode_BeginPlay, void, AShooterGameMode*);
@@ -55,7 +55,7 @@ extern "C" __declspec(dllexport) void Plugin_Unload()
 
 	// Do cleanup here
 	//AddReloadCommands(false);
-	//SetTimers(false);
+	SetTimers(false);
 	//SetHooks(false);
 }
 

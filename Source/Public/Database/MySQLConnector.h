@@ -246,7 +246,7 @@ private:
 			return false;
 		}
 
-		configureSSL(_ssl_mode, _tls_version);
+		//configureSSL(_ssl_mode, _tls_version);
 
 		if (!mysql_real_connect(conn, _host.c_str(), _user.c_str(), _password.c_str(), _dbname.c_str(), _port, nullptr, 0))
 		{

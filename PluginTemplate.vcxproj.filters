@@ -69,6 +69,15 @@
     <ClInclude Include="Source\Public\Database\IDatabaseConnector.h">
       <Filter>Header Files\Public\Database</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Public\Database\DatabaseFactory.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Database\MySQLConnector.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Database\SQLiteConnector.h">
+      <Filter>Header Files\Public\Database</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\PluginTemplate.cpp">

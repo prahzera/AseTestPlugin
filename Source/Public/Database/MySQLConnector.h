@@ -3,8 +3,9 @@
 
 #pragma once
 
-#include "IDatabaseConnector.h"
 #include <mysql/mysql.h>
+#include "IDatabaseConnector.h"
+
 
 #pragma comment(lib,"mysqlclient.lib")
 

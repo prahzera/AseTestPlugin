@@ -13,7 +13,7 @@ class DatabaseFactory
 public:
 	static std::unique_ptr<IDatabaseConnector> createConnector(const nlohmann::json config)
 	{
-		int sslMode = config.value("MysqlSSLMode", -1);
+		int sslMode = config["MysqlSSLMode"].get<int>();
 		std::string tlsVersion = config.value("MysqlTLSVersion", "");
 
 		if (config.value("UseMySQL", true) == true)

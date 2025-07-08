@@ -6,7 +6,7 @@
 #include "MySQLConnector.h"
 //#include "SQLiteConnector.h"
 #include <json.hpp>
-#include <memory>
+//#include <memory>
 
 class DatabaseFactory
 {

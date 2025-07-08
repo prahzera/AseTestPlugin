@@ -6,8 +6,8 @@ void TimerCallback()
 	{
 		Log::GetLog()->info("Server is up!");
 
-		FString msg = FString("Welcome to the server");
-		ArkApi::GetApiUtils().GetCheatManager()->Broadcast(&msg);
+		//FString msg = FString("Welcome to the server");
+		//ArkApi::GetApiUtils().GetCheatManager()->Broadcast(&msg);
 	}
 
 	// sample notif every 50secs

@@ -13,7 +13,7 @@ class DatabaseFactory
 public:
 	static std::unique_ptr<IDatabaseConnector> createConnector(const nlohmann::json config)
 	{
-		if (config.value("UseMySQL", true) == true)
+		if (config["UseMySQL"] == true)
 		{	
 			return std::make_unique<MySQLConnector>(
 				config["Host"],
@@ -28,7 +28,7 @@ public:
 		else
 		{
 			std::string default_path = ArkApi::Tools::GetCurrentDir() + "/ArkApi/Plugins/" + PROJECT_NAME + "/" + PROJECT_NAME + ".db";
-			std::string sqlitePath = config.value("SQLiteDatabasePath","");
+			std::string sqlitePath = config["SQLiteDatabasePath"];
 			std::string db_path = (sqlitePath.empty()) ? default_path : sqlitePath;
 
 			return std::make_unique<SQLiteConnector>(db_path);

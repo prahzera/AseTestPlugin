@@ -43,7 +43,7 @@ private:
 	/*int _ssl_mode;
 	std::string _tls_version;*/
 
-	void configureSSL(int ssl_mode, const std::string& tls_version);
+	//void configureSSL(int ssl_mode, const std::string& tls_version);
 	void printError(const std::string& message);
 	bool executeQuery(const std::string& query);
 	bool MySQLConnect();

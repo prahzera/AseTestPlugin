@@ -173,18 +173,18 @@ std::string MySQLConnector::escapeString(const std::string& value)
     return escapeStr;
 }
 
-void MySQLConnector::configureSSL(int ssl_mode, const std::string& tls_version)
-{
-    if (ssl_mode >= 0 && ssl_mode <= 4)
-    {
-        mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode);
-    }
-
-    if (!tls_version.empty())
-    {
-        mysql_options(conn, MYSQL_OPT_TLS_VERSION, tls_version.c_str());
-    }
-}
+//void MySQLConnector::configureSSL(int ssl_mode, const std::string& tls_version)
+//{
+//    if (ssl_mode >= 0 && ssl_mode <= 4)
+//    {
+//        mysql_options(conn, MYSQL_OPT_SSL_MODE, &ssl_mode);
+//    }
+//
+//    if (!tls_version.empty())
+//    {
+//        mysql_options(conn, MYSQL_OPT_TLS_VERSION, tls_version.c_str());
+//    }
+//}
 
 void MySQLConnector::printError(const std::string& message)
 {

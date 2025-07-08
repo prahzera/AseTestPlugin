@@ -423,7 +423,7 @@ void ReadConfig()
 
 		Log::GetLog()->info("{} config file loaded.", PROJECT_NAME);
 
-		PluginTemplate::isDebug = PluginTemplate::config["General"]["Debug"].get<bool>();
+		PluginTemplate::isDebug = PluginTemplate::config["Debug"]["PluginTemplate"].get<bool>();
 
 		Log::GetLog()->warn("Debug {}", PluginTemplate::isDebug);
 

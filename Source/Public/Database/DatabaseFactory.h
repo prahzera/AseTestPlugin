@@ -13,7 +13,7 @@ class DatabaseFactory
 public:
 	static std::unique_ptr<IDatabaseConnector> createConnector(const nlohmann::json config)
 	{
-		if (config["UseMySQL"] == true)
+		if (config["UseMySQL"].get<bool>() == true)
 		{	
 			return std::make_unique<MySQLConnector>(
 				config["Host"],

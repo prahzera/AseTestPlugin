@@ -11,7 +11,8 @@
 class MySQLConnector : public IDatabaseConnector
 {
 public:
-	MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port, int ssl_mode, const std::string& tls_version);
+	MySQLConnector(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname, unsigned int port);
+	//, int ssl_mode, const std::string& tls_version
 
 	~MySQLConnector();
 
@@ -39,8 +40,8 @@ private:
 	std::string _password;
 	std::string _dbname;
 	unsigned int _port;
-	int _ssl_mode;
-	std::string _tls_version;
+	/*int _ssl_mode;
+	std::string _tls_version;*/
 
 	void configureSSL(int ssl_mode, const std::string& tls_version);
 	void printError(const std::string& message);

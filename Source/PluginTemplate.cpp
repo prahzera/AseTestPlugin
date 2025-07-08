@@ -26,9 +26,9 @@ void OnServerReady()
 	Log::GetLog()->info("PluginTemplate Initialized");
 
 	// add function here
-	//AddReloadCommands();
-	//SetTimers();
-	//SetHooks();
+	AddReloadCommands();
+	SetTimers();
+	SetHooks();
 }
 
 DECLARE_HOOK(AShooterGameMode_BeginPlay, void, AShooterGameMode*);
@@ -54,8 +54,8 @@ extern "C" __declspec(dllexport) void Plugin_Unload()
 	ArkApi::GetHooks().DisableHook("AShooterGameMode.BeginPlay", &Hook_AShooterGameMode_BeginPlay);
 
 	// Do cleanup here
-	//AddReloadCommands(false);
-	//SetTimers(false);
-	//SetHooks(false);
+	AddReloadCommands(false);
+	SetTimers(false);
+	SetHooks(false);
 }
 

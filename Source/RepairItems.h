@@ -93,7 +93,7 @@ void RepairItemsCallback(AShooterPlayerController* pc, FString* param, int)
 
 		std::string msg = fmt::format("Player {} repaired their items. count {}", playername.ToString(), affectedItemsCounter);
 
-		SendMessageToDiscord(msg);
+		//SendMessageToDiscord(msg);
 	}
 }
 

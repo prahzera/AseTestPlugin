@@ -8,9 +8,27 @@
 #include <json.hpp>
 #include <memory>
 
+/**
+ * @class DatabaseFactory
+ * @brief Fábrica para crear conectores de bases de datos.
+ * 
+ * Esta clase proporciona un método estático para crear instancias
+ * de conectores de bases de datos según la configuración especificada.
+ * Permite crear conectores para MySQL o SQLite dependiendo de
+ * la configuración del plugin.
+ */
 class DatabaseFactory
 {
 public:
+	/**
+	 * @brief Crea un conector de base de datos según la configuración.
+	 * 
+	 * Este método fábrica crea una instancia del conector de base de datos
+	 * apropiado (MySQL o SQLite) basado en la configuración proporcionada.
+	 * 
+	 * @param config Configuración JSON que especifica el tipo de base de datos y sus parámetros.
+	 * @return Puntero único al conector de base de datos creado.
+	 */
 	static std::unique_ptr<IDatabaseConnector> createConnector(const nlohmann::json config)
 	{
 		int sslMode = config.value("MysqlSSLMode", -1);

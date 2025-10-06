@@ -1,4 +1,12 @@
-
+/**
+ * @brief Agrega o elimina los comandos de chat del plugin.
+ * 
+ * Esta función se encarga de registrar o desregistrar los comandos de chat
+ * proporcionados por el plugin. Los comandos se configuran en el archivo
+ * config.json y se pueden habilitar o deshabilitar según sea necesario.
+ * 
+ * @param addCmd Bandera que indica si se deben agregar (true) o eliminar (false) los comandos.
+ */
 void AddOrRemoveCommands(bool addCmd = true)
 {
 	const FString RepairItems = PluginTemplate::config["Commands"]["RepairItemCMD"].get<std::string>().c_str();

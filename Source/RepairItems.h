@@ -1,10 +1,19 @@
-
-
+/**
+ * @brief Callback para el comando de reparación de objetos.
+ * 
+ * Esta función se ejecuta cuando un jugador utiliza el comando de reparación
+ * de objetos. Verifica los permisos del jugador, el costo en puntos (si aplica),
+ * y repara todos los objetos dañados en el inventario del jugador.
+ * 
+ * @param pc Controlador del jugador que ejecuta el comando.
+ * @param param Parámetros adicionales del comando (no utilizados).
+ * @param unused Parámetro no utilizado.
+ */
 void RepairItemsCallback(AShooterPlayerController* pc, FString* param, int)
 {
-	Log::GetLog()->warn("Function: {}", __FUNCTION__);
+	Log::GetLog()->warn("Función: {}", __FUNCTION__);
 
-	// permissions check
+	// Verificación de permisos
 	FString steamid = FString(std::to_string(pc->GetLinkedPlayerID64()));
 	FString perms = GetPriorPermByEOSID(steamid);
 	nlohmann::json command = GetCommandString(perms.ToString(), "RepairItemCMD");
@@ -16,28 +25,28 @@ void RepairItemsCallback(AShooterPlayerController* pc, FString* param, int)
 	{
 		if (PluginTemplate::config["Debug"].value("Permissions", false) == true)
 		{
-			Log::GetLog()->info("{} No permissions. Command: {}", playername.ToString(), __FUNCTION__);
+			Log::GetLog()->info("{} No tiene permisos. Comando: {}", playername.ToString(), __FUNCTION__);
 		}
 
-		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PermErrorMSG", "You don't have permission to use this command.").c_str());
+		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PermErrorMSG", "No tienes permiso para usar este comando.").c_str());
 
 		return;
 	}
 	 
-	// points checking
+	// Verificación de puntos
 	if (Points(steamid, command.value("Cost", 0), true) == false)
 	{
 		if (PluginTemplate::config["Debug"].value("Points", false) == true)
 		{
-			Log::GetLog()->info("{} don't have points. Command: {}", playername.ToString(), __FUNCTION__);
+			Log::GetLog()->info("{} no tiene suficientes puntos. Comando: {}", playername.ToString(), __FUNCTION__);
 		}
 
-		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PointsErrorMSG", "Not enough points.").c_str());
+		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PointsErrorMSG", "No tienes suficientes puntos.").c_str());
 
 		return;
 	}
 
-	// execute
+	// Ejecución
 	ACharacter* character = pc->CharacterField();
 	if (!character) return;
 	APrimalCharacter* primalCharacter = static_cast<APrimalCharacter*>(character);
@@ -56,7 +65,7 @@ void RepairItemsCallback(AShooterPlayerController* pc, FString* param, int)
 
 		if (item->bIsItemSkin().Get()) continue;
 
-		//if(!item->IsBroken()) only fix broken things
+		//if(!item->IsBroken()) solo reparar cosas rotas
 
 		if (!item->UsesDurability()) continue;
 
@@ -84,23 +93,33 @@ void RepairItemsCallback(AShooterPlayerController* pc, FString* param, int)
 		AddPlayer(steamid, pc->GetLinkedPlayerID64(), playername);
 	}
 
-	// points deductions
+	// Deducción de puntos
 	Points(steamid, command.value("Cost", 0));
 
 	if (affectedItemsCounter > 0)
 	{
-		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Green, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("RepairItemsMSG", "All items has been repaired. {}").c_str(), playername.ToString());
+		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Green, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("RepairItemsMSG", "Todos los objetos han sido reparados. {}").c_str(), playername.ToString());
 
-		std::string msg = fmt::format("Player {} repaired their items. count {}", playername.ToString(), affectedItemsCounter);
+		std::string msg = fmt::format("El jugador {} reparó sus objetos. cantidad {}", playername.ToString(), affectedItemsCounter);
 
 		//SendMessageToDiscord(msg);
 	}
 }
 
-
+/**
+ * @brief Callback para el comando de eliminación de jugador.
+ * 
+ * Esta función se ejecuta cuando un jugador utiliza el comando de eliminación
+ * de jugador. Verifica los permisos del jugador, el costo en puntos (si aplica),
+ * y elimina los datos del jugador de la base de datos del plugin.
+ * 
+ * @param pc Controlador del jugador que ejecuta el comando.
+ * @param param Parámetros adicionales del comando (no utilizados).
+ * @param unused Parámetro no utilizado.
+ */
 void DeletePlayerCallback(AShooterPlayerController* pc, FString* param, int)
 {
-	Log::GetLog()->warn("Function: {}", __FUNCTION__);
+	Log::GetLog()->warn("Función: {}", __FUNCTION__);
 
 
 	//pc->GetEOSId(), pc->GetLinkedPlayerID(), pc->GetCharacterName()
@@ -110,7 +129,7 @@ void DeletePlayerCallback(AShooterPlayerController* pc, FString* param, int)
 
 	FString steamid = FString(std::to_string(pc->GetLinkedPlayerID64()));
 
-	// permissions check
+	// Verificación de permisos
 	FString perms = GetPriorPermByEOSID(steamid);
 	nlohmann::json command = GetCommandString(perms.ToString(), "DeletePlayerCMD");
 
@@ -118,23 +137,23 @@ void DeletePlayerCallback(AShooterPlayerController* pc, FString* param, int)
 	{
 		if (PluginTemplate::config["Debug"].value("Permissions", false) == true)
 		{
-			Log::GetLog()->info("{} No permissions. Command: {}", playername.ToString(), __FUNCTION__);
+			Log::GetLog()->info("{} No tiene permisos. Comando: {}", playername.ToString(), __FUNCTION__);
 		}
 
-		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PermErrorMSG", "You don't have permission to use this command.").c_str());
+		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PermErrorMSG", "No tienes permiso para usar este comando.").c_str());
 
 		return;
 	}
 
-	// points checking
+	// Verificación de puntos
 	if (Points(steamid, command.value("Cost", 0), true) == false)
 	{
 		if (PluginTemplate::config["Debug"].value("Points", false) == true)
 		{
-			Log::GetLog()->info("{} don't have points. Command: {}", playername.ToString(), __FUNCTION__);
+			Log::GetLog()->info("{} no tiene suficientes puntos. Comando: {}", playername.ToString(), __FUNCTION__);
 		}
 
-		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PointsErrorMSG", "Not enough points.").c_str());
+		ArkApi::GetApiUtils().SendNotification(pc, FColorList::Red, 1.3f, 15.0f, nullptr, PluginTemplate::config["Messages"].value("PointsErrorMSG", "No tienes suficientes puntos.").c_str());
 
 		return;
 	}
@@ -142,9 +161,8 @@ void DeletePlayerCallback(AShooterPlayerController* pc, FString* param, int)
 
 	DeletePlayer(steamid);
 
-	// points deductions
+	// Deducción de puntos
 	Points(steamid, command.value("Cost", 0));
 
-	ArkApi::GetApiUtils().SendNotification(pc, FColorList::Orange, 1.3f, 15.0f, nullptr, "Player deleted");
+	ArkApi::GetApiUtils().SendNotification(pc, FColorList::Orange, 1.3f, 15.0f, nullptr, "Jugador eliminado");
 }
-

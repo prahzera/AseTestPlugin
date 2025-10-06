@@ -1,19 +1,25 @@
-
+/**
+ * @brief Función de devolución de llamada para eventos temporizados.
+ * 
+ * Esta función se ejecuta periódicamente según el temporizador configurado.
+ * Se encarga de realizar acciones programadas como anuncios al servidor
+ * y notificaciones a los jugadores en intervalos específicos.
+ */
 void TimerCallback()
 {
-	// sample broadcast every 20secs
+	// Anuncio de muestra cada 20 segundos
 	if (PluginTemplate::counter == 20)
 	{
-		Log::GetLog()->info("Server is up!");
+		Log::GetLog()->info("¡El servidor está activo!");
 
-		//FString msg = FString("Welcome to the server");
+		//FString msg = FString("Bienvenido al servidor");
 		//ArkApi::GetApiUtils().GetCheatManager()->Broadcast(&msg);
 	}
 
-	// sample notif every 50secs
+	// Notificación de muestra cada 50 segundos
 	if (PluginTemplate::counter == 50)
 	{
-		ArkApi::GetApiUtils().SendNotificationToAll(FColorList::Blue, 1.3f, 15.0f, nullptr, "Hooray Welcome to the server! enjoy!");
+		ArkApi::GetApiUtils().SendNotificationToAll(FColorList::Blue, 1.3f, 15.0f, nullptr, "¡Hurra! ¡Bienvenido al servidor! ¡Disfruta!");
 	}
 
 	/*if (PluginTemplate::counter % 5 == 0)
@@ -25,7 +31,15 @@ void TimerCallback()
 	PluginTemplate::counter++;
 }
 
-
+/**
+ * @brief Configura o elimina los temporizadores del plugin.
+ * 
+ * Esta función se encarga de agregar o remover el callback del temporizador
+ * utilizado por el plugin. Cuando se agrega, se ejecuta periódicamente
+ * para realizar acciones programadas.
+ * 
+ * @param addTmr Bandera que indica si se debe agregar (true) o eliminar (false) el temporizador.
+ */
 void SetTimers(bool addTmr = true)
 {
 	if (addTmr)

@@ -169,13 +169,14 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\Public;$(SolutionDir)..\AseApi\version\Core\Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>I:\dev\ARK\AseApi\version\Core\Public;$(SolutionDir)Source\Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>$(SolutionDir)..\AseApi\out_lib\ArkApi.lib;$(SolutionDir)Libs\mysqlclient.lib;Ws2_32.lib;crypt32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>I:\dev\ARK\AseApi\out_lib\ArkApi.lib;$(SolutionDir)Libs\mysqlclient.lib;Ws2_32.lib;crypt32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>I:\dev\ARK\AseApi\out_lib;$(SolutionDir)Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(SolutionDir)Output\$(ProjectName)\"
